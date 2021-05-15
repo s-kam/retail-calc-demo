@@ -1,0 +1,3 @@
+recursive-include retail_calc_demo *.pyx *.mako
+recursive-exclude retail_calc_demo *.pyc *.ini *.c *.so
+recursive-exclude retail_calc_demo/tests *
