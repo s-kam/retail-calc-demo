@@ -1,0 +1,17 @@
+discounts:
+  # Format:
+  #  Order total, USD: discount, %
+  1000: 3
+  5000: 5
+  7000: 7
+  10000: 10
+  50000: 15
+
+tax_rates:
+  # Format:
+  #  State code: tax rate, %
+  UT: 6.85
+  NV: 8
+  TX: 6.25
+  AL: 4
+  CA: 8.85

@@ -45,7 +45,7 @@ setup(
     entry_points={
         'console_scripts': [
             f'{_NAME}_run = '
-            f'{_NAME}.app:create_app',
+            f'{_NAME}.scripts:run_app',
         ],
     }
 )

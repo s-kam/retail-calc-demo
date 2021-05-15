@@ -28,6 +28,8 @@ multidict==5.1.0
     # via
     #   aiohttp
     #   yarl
+pyyaml==5.4.1
+    # via -r ./requirements.in
 typing-extensions==3.10.0.0
     # via
     #   aiohttp

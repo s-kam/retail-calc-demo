@@ -4,12 +4,9 @@
 #
 #    pip-compile ./requirements-dev.in
 #
-aiohttp-devtools==0.13.1
-    # via -r ./requirements-dev.in
 aiohttp==3.7.3
     # via
     #   -c ./requirements.txt
-    #   aiohttp-devtools
     #   pytest-aiohttp
 astroid==2.5.6
     # via pylint
@@ -26,10 +23,6 @@ chardet==3.0.4
     # via
     #   -c ./requirements.txt
     #   aiohttp
-click==8.0.0
-    # via aiohttp-devtools
-devtools==0.6.1
-    # via aiohttp-devtools
 idna==3.1
     # via
     #   -c ./requirements.txt
@@ -53,8 +46,6 @@ pluggy==0.13.1
     # via pytest
 py==1.10.0
     # via pytest
-pygments==2.9.0
-    # via aiohttp-devtools
 pylint==2.7.4
     # via -r ./requirements-dev.in
 pyparsing==2.4.7
@@ -73,8 +64,6 @@ typing-extensions==3.10.0.0
     # via
     #   -c ./requirements.txt
     #   aiohttp
-watchgod==0.7
-    # via aiohttp-devtools
 wrapt==1.12.1
     # via astroid
 yarl==1.6.3
