@@ -52,7 +52,7 @@ class CachedViewResponse(cached):
     async def get_from_cache(self, key):
         value = await super().get_from_cache(key)
         # Aiohttp forbids reusing responses.
-        if type(value) == Response:
+        if isinstance(value, Response):
             return Response(
                 body=value.body,
                 status=value.status,

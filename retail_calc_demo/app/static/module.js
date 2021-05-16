@@ -1,5 +1,5 @@
 export default async () => {
-  const statesUrl = new URL('/states', window.location.origin);
+  const statesUrl = new URL('/state_codes', window.location.origin);
   const response = await fetch(statesUrl);
   const items = await response.json();
   if (items.length > 0) {
