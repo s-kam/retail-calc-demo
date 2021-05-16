@@ -33,4 +33,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a ci script
-        run: bin/bash "$GITHUB_WORKSPACE/scripts/ci.sh"
+        run: "$GITHUB_WORKSPACE/scripts/ci.sh"
