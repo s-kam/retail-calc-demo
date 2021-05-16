@@ -1,4 +1,6 @@
 from aiohttp.web_exceptions import HTTPFound
+from aiohttp.web_request import Request
+from aiohttp.web_response import Response
 from marshmallow import ValidationError
 
 from retail_calc_demo.constant import APP_SETTINGS_LABEL, \
@@ -20,7 +22,7 @@ __all__ = [
 
 
 @CachedViewResponse()
-async def calc_view(request):
+async def calc_view(request: Request) -> Response:
     """Order subtotal and total calculation."""
 
     try:
@@ -49,13 +51,13 @@ async def calc_view(request):
 
 
 @CachedViewResponse()
-async def state_codes_view(request):
+async def state_codes_view(request: Request) -> Response:
     """Known state codes."""
     return json_response(
         tuple(request.app[APP_SETTINGS_LABEL][KNOWN_STATE_CODES_SETTING_LABEL])
     )
 
 
-async def index_view(request):
+async def index_view(request: Request) -> None:
     """Redirect to static index.html from root."""
     raise HTTPFound('/index.html')

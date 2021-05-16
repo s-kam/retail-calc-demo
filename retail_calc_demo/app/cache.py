@@ -1,5 +1,5 @@
 from hashlib import sha1
-from typing import Awaitable, Callable, Optional
+from typing import Any, Awaitable, Callable, Optional
 
 from aiocache import cached
 from aiocache.base import SENTINEL
@@ -49,7 +49,7 @@ class CachedViewResponse(cached):
             return
         await super().set_in_cache(key, value)
 
-    async def get_from_cache(self, key):
+    async def get_from_cache(self, key: str) -> Any:
         value = await super().get_from_cache(key)
         # Aiohttp forbids reusing responses.
         if isinstance(value, Response):
