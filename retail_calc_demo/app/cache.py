@@ -4,7 +4,7 @@ from typing import Awaitable, Callable, Optional
 from aiocache import cached
 from aiocache.base import SENTINEL
 from aiohttp.web_request import Request
-from aiohttp.web_response import StreamResponse
+from aiohttp.web_response import Response, StreamResponse
 
 __all__ = [
     'CachedViewResponse',
@@ -43,3 +43,20 @@ class CachedViewResponse(cached):
             key_builder=_generate_view_response_cache_key,
             ttl=ttl,
         )
+
+    async def set_in_cache(self, key: str, value: StreamResponse) -> None:
+        if value.status >= 400:
+            return
+        await super().set_in_cache(key, value)
+
+    async def get_from_cache(self, key):
+        value = await super().get_from_cache(key)
+        # Aiohttp forbids reusing responses.
+        if type(value) == Response:
+            return Response(
+                body=value.body,
+                status=value.status,
+                reason=value.reason,
+                headers=value.headers,
+            )
+        return value

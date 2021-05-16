@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-8 col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Retail Calculator</h5>
+                <div data-container="sign-up">
+                  <form class="row g-3">
+                    <div class="col-md-4">
+                      <label for="inputQuantity" class="form-label">Quantity</label>
+                      <input type="number" min="1" class="form-control" id="inputQuantity" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputPrice" class="form-label">Unit Cost</label>
+                      <input type="number" step="0.01" min="0" class="form-control" id="inputPrice" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputState" class="form-label">State</label>
+                      <select id="inputState" class="form-select" required>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="outputSubtotal" class="form-label">Subtotal With Discount</label>
+                      <input type="text" readonly class="form-control-plaintext" id="outputSubtotal" value="0">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="outputTotal" class="form-label">Total</label>
+                      <input type="text" readonly class="form-control-plaintext" id="outputTotal" value="0">
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Calculate</button>
+                    </div>
+                  </form>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="module" src="/index.js" ></script>
+  </body>
+</html>
